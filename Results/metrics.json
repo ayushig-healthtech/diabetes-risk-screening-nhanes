@@ -1,1 +1,642 @@
-
+{
+  "headline_2017_2020": {
+    "adults with undiagnosed diabetes": {
+      "estimate": 0.023924118571430026,
+      "ci_low": 0.020029948364835376,
+      "ci_high": 0.027818288778024676,
+      "n": 8000
+    },
+    "of everyone with diabetes, share undiagnosed": {
+      "estimate": 0.16820877282320087,
+      "ci_low": 0.14499535746615197,
+      "ci_high": 0.19142218818024978,
+      "n": 1541
+    },
+    "undiagnosed diabetes: NO blood test in past 3 years": {
+      "estimate": 0.2657278577956195,
+      "ci_low": 0.2068982771217809,
+      "ci_high": 0.32455743846945817,
+      "n": 280
+    },
+    "prediabetes range: never told they have prediabetes": {
+      "estimate": 0.7704171366940603,
+      "ci_low": 0.7346525883190568,
+      "ci_high": 0.8061816850690638,
+      "n": 2016
+    }
+  },
+  "headline_2021_2023": {
+    "adults with undiagnosed diabetes": {
+      "estimate": 0.02252134477947116,
+      "ci_low": 0.017566277819432125,
+      "ci_high": 0.027476411739510195,
+      "n": 5730
+    },
+    "of everyone with diabetes, share undiagnosed": {
+      "estimate": 0.16171052239106476,
+      "ci_low": 0.12775922400901274,
+      "ci_high": 0.19566182077311678,
+      "n": 971
+    },
+    "undiagnosed diabetes: NO blood test in past 3 years": {
+      "estimate": 0.363294929500134,
+      "ci_low": 0.2828916681892249,
+      "ci_high": 0.44369819081104306,
+      "n": 150
+    }
+  },
+  "module1_auroc": [
+    {
+      "score": "IDRS (4 items)",
+      "AUROC": 0.697,
+      "95% CI": "0.663-0.727",
+      "AUPRC": 0.063,
+      "vs ADA risk test (7 items)": "-0.044 (-0.068 to -0.019)"
+    },
+    {
+      "score": "ADA risk test (7 items)",
+      "AUROC": 0.741,
+      "95% CI": "0.714-0.768",
+      "AUPRC": 0.072,
+      "vs ADA risk test (7 items)": ""
+    },
+    {
+      "score": "Logistic regression",
+      "AUROC": 0.759,
+      "95% CI": "0.729-0.786",
+      "AUPRC": 0.087,
+      "vs ADA risk test (7 items)": "+0.018 (-0.005 to +0.039)"
+    },
+    {
+      "score": "Gradient boosting",
+      "AUROC": 0.725,
+      "95% CI": "0.692-0.758",
+      "AUPRC": 0.089,
+      "vs ADA risk test (7 items)": "-0.016 (-0.042 to +0.010)"
+    }
+  ],
+  "module1_thresholds": [
+    {
+      "index": "IDRS >= 60",
+      "sensitivity": 0.8634361233,
+      "specificity": 0.4054484626,
+      "PPV": 0.049898167,
+      "share_tested": 0.6039360394,
+      "tests_per_case_found": 20.0408163265
+    },
+    {
+      "index": "ADA >= 5",
+      "sensitivity": 0.8325991189,
+      "specificity": 0.5504221762,
+      "PPV": 0.0627698439,
+      "share_tested": 0.4629458795,
+      "tests_per_case_found": 15.9312169312
+    },
+    {
+      "index": "Logistic regression (same sensitivity as ADA)",
+      "sensitivity": 0.8325991189,
+      "specificity": 0.5367213637,
+      "PPV": 0.0610268001,
+      "share_tested": 0.4761685117,
+      "tests_per_case_found": 16.3862433862
+    },
+    {
+      "index": "Gradient boosting (same sensitivity as ADA)",
+      "sensitivity": 0.8325991189,
+      "specificity": 0.4616855186,
+      "PPV": 0.052970852,
+      "share_tested": 0.5485854859,
+      "tests_per_case_found": 18.8783068783
+    }
+  ],
+  "module1_any_dysglycaemia_auroc": [
+    {
+      "score": "IDRS (4 items)",
+      "AUROC": 0.694,
+      "95% CI": "0.682-0.706",
+      "AUPRC": 0.495,
+      "vs ADA risk test (7 items)": "-0.029 (-0.039 to -0.021)"
+    },
+    {
+      "score": "ADA risk test (7 items)",
+      "AUROC": 0.723,
+      "95% CI": "0.711-0.736",
+      "AUPRC": 0.525,
+      "vs ADA risk test (7 items)": ""
+    },
+    {
+      "score": "Logistic regression",
+      "AUROC": 0.733,
+      "95% CI": "0.721-0.744",
+      "AUPRC": 0.548,
+      "vs ADA risk test (7 items)": "+0.010 (+0.003 to +0.016)"
+    },
+    {
+      "score": "Gradient boosting",
+      "AUROC": 0.732,
+      "95% CI": "0.721-0.743",
+      "AUPRC": 0.557,
+      "vs ADA risk test (7 items)": "+0.009 (+0.001 to +0.016)"
+    }
+  ],
+  "module1_fairness": [
+    {
+      "group": "age",
+      "level": "20-39",
+      "n": 2273,
+      "cases": 28,
+      "AUROC Logistic regression": 0.8566815145,
+      "AUROC ADA": 0.7924435253,
+      "sensitivity Logistic regression": 0.7142857143,
+      "sensitivity ADA>=5": 0.3928571429
+    },
+    {
+      "group": "age",
+      "level": "40-59",
+      "n": 2199,
+      "cases": 100,
+      "AUROC Logistic regression": 0.7155693187,
+      "AUROC ADA": 0.7212005717,
+      "sensitivity Logistic regression": 0.8,
+      "sensitivity ADA>=5": 0.82
+    },
+    {
+      "group": "age",
+      "level": "60+",
+      "n": 2032,
+      "cases": 99,
+      "AUROC Logistic regression": 0.6865237998,
+      "AUROC ADA": 0.6632648262,
+      "sensitivity Logistic regression": 0.898989899,
+      "sensitivity ADA>=5": 0.9696969697
+    },
+    {
+      "group": "ethnicity",
+      "level": "Mexican American",
+      "n": 760,
+      "cases": 38,
+      "AUROC Logistic regression": 0.7699008602,
+      "AUROC ADA": 0.7704293629,
+      "sensitivity Logistic regression": 0.8157894737,
+      "sensitivity ADA>=5": 0.7894736842
+    },
+    {
+      "group": "ethnicity",
+      "level": "NH Asian",
+      "n": 776,
+      "cases": 36,
+      "AUROC Logistic regression": 0.7653528529,
+      "AUROC ADA": 0.7906906907,
+      "sensitivity Logistic regression": 0.6944444444,
+      "sensitivity ADA>=5": 0.7222222222
+    },
+    {
+      "group": "ethnicity",
+      "level": "NH Black",
+      "n": 1637,
+      "cases": 73,
+      "AUROC Logistic regression": 0.7297060575,
+      "AUROC ADA": 0.7430806152,
+      "sensitivity Logistic regression": 0.8356164384,
+      "sensitivity ADA>=5": 0.8904109589
+    },
+    {
+      "group": "ethnicity",
+      "level": "NH White",
+      "n": 2339,
+      "cases": 36,
+      "AUROC Logistic regression": 0.8028175809,
+      "AUROC ADA": 0.7704624403,
+      "sensitivity Logistic regression": 0.9444444444,
+      "sensitivity ADA>=5": 0.9166666667
+    },
+    {
+      "group": "ethnicity",
+      "level": "Other Hispanic",
+      "n": 685,
+      "cases": 33,
+      "AUROC Logistic regression": 0.794943298,
+      "AUROC ADA": 0.7363357501,
+      "sensitivity Logistic regression": 0.8787878788,
+      "sensitivity ADA>=5": 0.8181818182
+    },
+    {
+      "group": "ethnicity",
+      "level": "Other/Multi",
+      "n": 307,
+      "cases": 11,
+      "AUROC Logistic regression": null,
+      "AUROC ADA": null,
+      "sensitivity Logistic regression": 0.8181818182,
+      "sensitivity ADA>=5": 0.7272727273
+    },
+    {
+      "group": "income (poverty ratio)",
+      "level": "1.3-3.5",
+      "n": 2185,
+      "cases": 78,
+      "AUROC Logistic regression": 0.7260109768,
+      "AUROC ADA": 0.7033940589,
+      "sensitivity Logistic regression": 0.8076923077,
+      "sensitivity ADA>=5": 0.8076923077
+    },
+    {
+      "group": "income (poverty ratio)",
+      "level": "< 1.3 (low)",
+      "n": 1561,
+      "cases": 61,
+      "AUROC Logistic regression": 0.7716612022,
+      "AUROC ADA": 0.7491639344,
+      "sensitivity Logistic regression": 0.8196721311,
+      "sensitivity ADA>=5": 0.7868852459
+    },
+    {
+      "group": "income (poverty ratio)",
+      "level": "> 3.5 (high)",
+      "n": 1869,
+      "cases": 58,
+      "AUROC Logistic regression": 0.7684552257,
+      "AUROC ADA": 0.7818884594,
+      "sensitivity Logistic regression": 0.8275862069,
+      "sensitivity ADA>=5": 0.8965517241
+    },
+    {
+      "group": "sex",
+      "level": "female",
+      "n": 3420,
+      "cases": 130,
+      "AUROC Logistic regression": 0.8082698153,
+      "AUROC ADA": 0.7835012859,
+      "sensitivity Logistic regression": 0.9153846154,
+      "sensitivity ADA>=5": 0.8384615385
+    },
+    {
+      "group": "sex",
+      "level": "male",
+      "n": 3084,
+      "cases": 97,
+      "AUROC Logistic regression": 0.6888613545,
+      "AUROC ADA": 0.689294503,
+      "sensitivity Logistic regression": 0.7216494845,
+      "sensitivity ADA>=5": 0.824742268
+    }
+  ],
+  "module1_top_drivers": {
+    "age": 0.5066,
+    "waist_height_ratio": 0.3285,
+    "family_history_diabetes": 0.269,
+    "systolic_bp": 0.2396,
+    "waist_cm": 0.2303,
+    "bmi": 0.1577,
+    "told_high_bp": 0.1178,
+    "diastolic_bp": 0.1164,
+    "weight_kg": 0.1054,
+    "ever_smoked_100_cig": 0.1035
+  },
+  "points_card_auroc": [
+    {
+      "score": "Points card (5 items, out-of-fold)",
+      "AUROC": 0.741,
+      "95% CI": "0.709-0.771",
+      "AUPRC": 0.074,
+      "vs ADA risk test (7 items)": "-0.004 (-0.024 to +0.014)"
+    },
+    {
+      "score": "IDRS (4 items)",
+      "AUROC": 0.696,
+      "95% CI": "0.664-0.725",
+      "AUPRC": 0.063,
+      "vs ADA risk test (7 items)": "-0.049 (-0.074 to -0.024)"
+    },
+    {
+      "score": "ADA risk test (7 items)",
+      "AUROC": 0.745,
+      "95% CI": "0.719-0.773",
+      "AUPRC": 0.072,
+      "vs ADA risk test (7 items)": ""
+    },
+    {
+      "score": "Gradient boosting (18 inputs)",
+      "AUROC": 0.725,
+      "95% CI": "0.693-0.759",
+      "AUPRC": 0.091,
+      "vs ADA risk test (7 items)": "-0.020 (-0.045 to +0.009)"
+    }
+  ],
+  "points_card": {
+    "description": "NHANES 2017-2020 diabetes screening points card (target: undiagnosed diabetes, HbA1c >= 6.5)",
+    "body_measure": "bmi",
+    "bands": {
+      "age": {
+        "edges": [
+          20,
+          35,
+          45,
+          55,
+          65,
+          200
+        ],
+        "labels": [
+          "20-34",
+          "35-44",
+          "45-54",
+          "55-64",
+          "65+"
+        ],
+        "points": [
+          0,
+          4,
+          4,
+          5,
+          5
+        ]
+      },
+      "bmi": {
+        "edges": [
+          0,
+          25,
+          30,
+          35,
+          40,
+          999
+        ],
+        "labels": [
+          "< 25",
+          "25-29.9",
+          "30-34.9",
+          "35-39.9",
+          "40+"
+        ],
+        "points": [
+          0,
+          1,
+          4,
+          4,
+          5
+        ]
+      }
+    },
+    "yes_no": {
+      "family_history_diabetes": {
+        "question": "Parent, brother or sister with diabetes",
+        "points": 1
+      },
+      "told_high_bp": {
+        "question": "Ever told by a doctor you have high blood pressure",
+        "points": 2
+      },
+      "inactive": {
+        "question": "No regular exercise AND no physically hard work",
+        "points": 1
+      }
+    },
+    "dropped_zero_point_items": [
+      "male"
+    ],
+    "cutoff": 7,
+    "max_score": 14,
+    "band_rates": {
+      "low": {
+        "undiagnosed_diabetes": 0.007417397167902899,
+        "hba1c_5_7_or_more": 0.19386378961564396,
+        "n": 2966
+      },
+      "high": {
+        "undiagnosed_diabetes": 0.05905875115349123,
+        "hba1c_5_7_or_more": 0.478929560135343,
+        "n": 3251
+      }
+    },
+    "auroc_out_of_fold": 0.741,
+    "sensitivity_at_cutoff": 0.897196261682243,
+    "share_tested_at_cutoff": 0.5229210230014476
+  },
+  "asian_subgroup": [
+    {
+      "index": "ADA >= 5 (standard BMI)",
+      "sensitivity": 0.7222222222,
+      "specificity": 0.7378378378,
+      "PPV": 0.1181818182,
+      "share_tested": 0.2835051546,
+      "tests_per_case_found": 8.4615384615
+    },
+    {
+      "index": "ADA >= 5 (Asian BMI cut-offs)",
+      "sensitivity": 0.8055555556,
+      "specificity": 0.672972973,
+      "PPV": 0.1070110701,
+      "share_tested": 0.3492268041,
+      "tests_per_case_found": 9.3448275862
+    },
+    {
+      "index": "IDRS >= 60",
+      "sensitivity": 0.9166666667,
+      "specificity": 0.5027027027,
+      "PPV": 0.0822942643,
+      "share_tested": 0.5167525773,
+      "tests_per_case_found": 12.1515151515
+    },
+    {
+      "index": "Logistic regression (threshold from 5a)",
+      "sensitivity": 0.6944444444,
+      "specificity": 0.6527027027,
+      "PPV": 0.0886524823,
+      "share_tested": 0.3634020619,
+      "tests_per_case_found": 11.28
+    }
+  ],
+  "asian_auroc": [
+    {
+      "score": "IDRS",
+      "AUROC": 0.768,
+      "95% CI": "0.696-0.837",
+      "AUPRC": 0.12
+    },
+    {
+      "score": "ADA (standard)",
+      "AUROC": 0.791,
+      "95% CI": "0.731-0.848",
+      "AUPRC": 0.114
+    },
+    {
+      "score": "ADA (Asian BMI)",
+      "AUROC": 0.773,
+      "95% CI": "0.713-0.832",
+      "AUPRC": 0.103
+    },
+    {
+      "score": "Logistic regression",
+      "AUROC": 0.765,
+      "95% CI": "0.698-0.826",
+      "AUPRC": 0.132
+    },
+    {
+      "score": "Points card (out-of-fold)",
+      "AUROC": 0.765,
+      "95% CI": "",
+      "AUPRC": ""
+    }
+  ],
+  "module2_auroc": [
+    {
+      "features": "with treatment answers",
+      "model": "Logistic regression",
+      "AUROC": 0.714,
+      "95% CI": "0.684-0.747"
+    },
+    {
+      "features": "with treatment answers",
+      "model": "Gradient boosting",
+      "AUROC": 0.678,
+      "95% CI": "0.644-0.715"
+    },
+    {
+      "features": "without treatment answers",
+      "model": "Logistic regression",
+      "AUROC": 0.582,
+      "95% CI": "0.552-0.619"
+    },
+    {
+      "features": "without treatment answers",
+      "model": "Gradient boosting",
+      "AUROC": 0.565,
+      "95% CI": "0.532-0.600"
+    }
+  ],
+  "module3_auroc": [
+    {
+      "score": "Logistic regression",
+      "AUROC": 0.686,
+      "95% CI": "0.657-0.715",
+      "AUPRC": 0.606
+    },
+    {
+      "score": "Gradient boosting",
+      "AUROC": 0.684,
+      "95% CI": "0.657-0.711",
+      "AUPRC": 0.607
+    }
+  ],
+  "temporal_validation": [
+    {
+      "model": "Logistic regression",
+      "AUROC 2017-20 (out-of-fold)": 0.75,
+      "AUROC 2021-23 (new data)": 0.741,
+      "2021-23 95% CI": "0.701-0.777",
+      "mean predicted risk 2021-23": 0.0344,
+      "observed rate 2021-23": 0.0247
+    },
+    {
+      "model": "Gradient boosting",
+      "AUROC 2017-20 (out-of-fold)": 0.712,
+      "AUROC 2021-23 (new data)": 0.752,
+      "2021-23 95% CI": "0.712-0.789",
+      "mean predicted risk 2021-23": 0.0325,
+      "observed rate 2021-23": 0.0247
+    }
+  ],
+  "module1_sex_thresholds": [
+    {
+      "rule": "ADA >= 5",
+      "group": "men",
+      "sensitivity": 0.824742268,
+      "share_tested": 0.5184824903,
+      "tests_per_case_found": 19.9875
+    },
+    {
+      "rule": "ADA >= 5",
+      "group": "women",
+      "sensitivity": 0.8384615385,
+      "share_tested": 0.4128654971,
+      "tests_per_case_found": 12.9541284404
+    },
+    {
+      "rule": "ADA >= 5",
+      "group": "everyone",
+      "sensitivity": 0.8325991189,
+      "share_tested": 0.4629458795,
+      "tests_per_case_found": 15.9312169312
+    },
+    {
+      "rule": "Logistic regression, one threshold",
+      "group": "men",
+      "sensitivity": 0.7216494845,
+      "share_tested": 0.4529831388,
+      "tests_per_case_found": 19.9571428571
+    },
+    {
+      "rule": "Logistic regression, one threshold",
+      "group": "women",
+      "sensitivity": 0.9153846154,
+      "share_tested": 0.4970760234,
+      "tests_per_case_found": 14.2857142857
+    },
+    {
+      "rule": "Logistic regression, one threshold",
+      "group": "everyone",
+      "sensitivity": 0.8325991189,
+      "share_tested": 0.4761685117,
+      "tests_per_case_found": 16.3862433862
+    },
+    {
+      "rule": "Logistic regression, threshold per sex",
+      "group": "men",
+      "sensitivity": 0.8350515464,
+      "share_tested": 0.5645265888,
+      "tests_per_case_found": 21.4938271605
+    },
+    {
+      "rule": "Logistic regression, threshold per sex",
+      "group": "women",
+      "sensitivity": 0.8384615385,
+      "share_tested": 0.3643274854,
+      "tests_per_case_found": 11.4311926606
+    },
+    {
+      "rule": "Logistic regression, threshold per sex",
+      "group": "everyone",
+      "sensitivity": 0.8370044053,
+      "share_tested": 0.4592558426,
+      "tests_per_case_found": 15.7210526316
+    }
+  ],
+  "temporal_clean_threshold": [
+    {
+      "index": "Logistic regression (threshold frozen on 2017-20)",
+      "sensitivity": 0.8275862069,
+      "specificity": 0.5061108686,
+      "PPV": 0.0406952098,
+      "share_tested": 0.5021285653,
+      "tests_per_case_found": 24.5729166667
+    },
+    {
+      "index": "Gradient boosting (threshold frozen on 2017-20)",
+      "sensitivity": 0.9137931034,
+      "specificity": 0.4220864251,
+      "PPV": 0.0384894699,
+      "share_tested": 0.5862068966,
+      "tests_per_case_found": 25.9811320755
+    }
+  ],
+  "temporal_recalibration": [
+    {
+      "index": "Logistic regression",
+      "mean predicted": 0.034350196,
+      "observed": 0.024691358,
+      "intercept shift (log-odds)": -0.3507486288,
+      "risks should be multiplied by about": 0.7041607373
+    },
+    {
+      "index": "Gradient boosting",
+      "mean predicted": 0.0325437383,
+      "observed": 0.024691358,
+      "intercept shift (log-odds)": -0.2964685192,
+      "risks should be multiplied by about": 0.743439031
+    }
+  ],
+  "versions": {
+    "pandas": "3.0.3",
+    "numpy": "2.4.6",
+    "scikit-learn": "1.8.0"
+  }
+}
