@@ -1,0 +1,6 @@
+name,age,sex,height_cm,weight_kg,waist_cm,systolic_bp,diastolic_bp,already_diagnosed,pregnant,family_history,high_bp,high_cholesterol,smoked,exercise,hard_work,diabetes_in_pregnancy,symptoms
+Random person 1,80,female,160.9,50.7,90.5,150,94,no,no,no,yes,yes,no,moderate,no,no,no
+Random person 2,56,male,166.1,59.1,88.7,151,98,no,no,no,no,yes,no,moderate,yes,no,no
+Random person 3,56,male,172.4,85.2,102.4,137,92,no,no,no,no,yes,no,moderate,no,no,no
+Random person 4,38,female,152.9,61.0,86.0,117,84,borderline,no,yes,no,no,no,none,no,no,no
+Random person 5,24,female,164.0,68.3,82.7,147,95,borderline,no,no,no,no,no,moderate,yes,no,no
