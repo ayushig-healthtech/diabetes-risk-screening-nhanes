@@ -1,0 +1,11 @@
+﻿# Full set: re-run the notebook from scratch (Python 3.14).
+# These are the versions the results in README.md were produced with.
+# Only want to use tool/predict.py and tool/make_card.py? Install requirements-tool.txt instead.
+pandas==3.0.3
+numpy==2.4.6
+scikit-learn==1.8.0
+joblib==1.5.3
+scipy==1.17.1
+matplotlib==3.10.9
+requests==2.34.2
+shap==0.52.0
