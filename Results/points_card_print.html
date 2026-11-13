@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Diabetes risk card</title>
+<style>
+  @page { size: A4; margin: 14mm; }
+  body { font-family: "Noto Sans", "Nirmala UI", "Mangal", Arial, sans-serif; color: #111; background: #fff;
+         max-width: 190mm; margin: 0 auto; padding: 8px; }
+  h1 { font-size: 20px; margin: 0 0 2px; } h1 span { font-weight: normal; }
+  p { margin: 4px 0; font-size: 12.5px; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 12.5px; }
+  th, td { border: 1px solid #555; padding: 5px 4px; vertical-align: middle; }
+  th { text-align: left; width: 34%; font-weight: 600; }
+  td { text-align: center; }
+  .lab { display: block; font-size: 11px; color: #333; }
+  .hi { font-weight: normal; font-size: 11.5px; }
+  .yes { text-align: left; }
+  .box { width: 15mm; background: #f3f3f3; }
+  .total td { font-size: 15px; font-weight: bold; }
+  .rule { border: 2px solid #111; padding: 8px 10px; margin: 10px 0; font-size: 14px; }
+  .small { font-size: 10.5px; color: #333; }
+  .lookup { font-size: 11px; margin-top: 4px; } .lookup th { width: auto; text-align: center; }
+  .lookup td, .lookup th { padding: 2px 4px; }
+</style></head><body>
+<h1>Diabetes risk card <span>/ डायबिटीज़ जोखिम कार्ड</span></h1>
+<p>For adults aged 20+, not pregnant, not already diagnosed. Circle one value in each row and write the points in the grey box.<br>
+20+ उम्र के वयस्कों के लिए (गर्भवती नहीं, पहले से डायबिटीज़ नहीं)। हर पंक्ति में एक मान चुनें और अंक ग्रे बॉक्स में लिखें।</p>
+<table>
+<tr><th>Age (years)<br><span class='hi'>उम्र (साल)</span></th><td><span class='lab'>20-34</span><b>0</b></td><td><span class='lab'>35-44</span><b>4</b></td><td><span class='lab'>45-54</span><b>4</b></td><td><span class='lab'>55-64</span><b>5</b></td><td><span class='lab'>65+</span><b>5</b></td><td class='box'></td></tr><tr><th>BMI (weight kg ÷ height m²)<br><span class='hi'>BMI (वज़न किलो ÷ लंबाई मीटर²)</span></th><td><span class='lab'>&lt; 25</span><b>0</b></td><td><span class='lab'>25-29.9</span><b>1</b></td><td><span class='lab'>30-34.9</span><b>4</b></td><td><span class='lab'>35-39.9</span><b>4</b></td><td><span class='lab'>40+</span><b>5</b></td><td class='box'></td></tr><tr><th>Parent, brother or sister has diabetes<br><span class='hi'>माता-पिता, भाई या बहन को डायबिटीज़</span></th><td colspan='5' class='yes'>Yes / हाँ = <b>1</b> &nbsp;·&nbsp; No / नहीं = <b>0</b></td><td class='box'></td></tr><tr><th>Ever told by a doctor: high blood pressure<br><span class='hi'>डॉक्टर ने कभी हाई ब्लड प्रेशर बताया</span></th><td colspan='5' class='yes'>Yes / हाँ = <b>2</b> &nbsp;·&nbsp; No / नहीं = <b>0</b></td><td class='box'></td></tr><tr><th>No regular exercise AND no hard physical work<br><span class='hi'>न नियमित व्यायाम, न भारी शारीरिक मेहनत</span></th><td colspan='5' class='yes'>Yes / हाँ = <b>1</b> &nbsp;·&nbsp; No / नहीं = <b>0</b></td><td class='box'></td></tr>
+<tr class="total"><td colspan="6" style="text-align:right">TOTAL / कुल (out of 14)</td><td class="box"></td></tr>
+</table>
+<div class="rule"><b>7 or more → refer for an HbA1c blood test.</b><br>
+<b>7 या ज़्यादा → HbA1c खून की जाँच के लिए भेजें।</b></div>
+<p><b>BMI without a calculator / बिना कैलकुलेटर BMI:</b> find the height row; the person is in the highest column whose weight they reach. / लंबाई की पंक्ति देखें; जिस कॉलम का वज़न पूरा हो, वही BMI वर्ग।</p><table class='lookup'><tr><th>Height cm / लंबाई</th><th>25-29.9<br><span class='hi'>from kg</span></th><th>30-34.9<br><span class='hi'>from kg</span></th><th>35-39.9<br><span class='hi'>from kg</span></th><th>40+<br><span class='hi'>from kg</span></th></tr><tr><td><b>145</b></td><td>53</td><td>63</td><td>74</td><td>84</td></tr><tr><td><b>150</b></td><td>56</td><td>68</td><td>79</td><td>90</td></tr><tr><td><b>155</b></td><td>60</td><td>72</td><td>84</td><td>96</td></tr><tr><td><b>160</b></td><td>64</td><td>77</td><td>90</td><td>102</td></tr><tr><td><b>165</b></td><td>68</td><td>82</td><td>95</td><td>109</td></tr><tr><td><b>170</b></td><td>72</td><td>87</td><td>101</td><td>116</td></tr><tr><td><b>175</b></td><td>77</td><td>92</td><td>107</td><td>122</td></tr><tr><td><b>180</b></td><td>81</td><td>97</td><td>113</td><td>130</td></tr><tr><td><b>185</b></td><td>86</td><td>103</td><td>120</td><td>137</td></tr></table>
+<p class="small">In the US survey this card was built on, a score of 7+ found 90% of people with
+hidden diabetes while referring 52% of adults. Among people scoring 7+, about
+6 in 100 had hidden diabetes and
+48 in 100 had raised sugar.
+Below 7: under 1 in 100.</p>
+<p class="small">Screening tool, not a diagnosis. Built from NHANES 2017–2020 (US); not yet validated in India.
+Anyone with thirst, frequent urination, weight loss or tiredness should be tested whatever their score.<br>
+यह स्क्रीनिंग है, निदान नहीं। ज़्यादा प्यास, बार-बार पेशाब, वज़न घटना या थकान हो तो स्कोर कुछ भी हो, जाँच करवाएँ।</p>
+</body></html>

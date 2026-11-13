@@ -1,0 +1,88 @@
+{
+  "description": "NHANES 2017-2020 diabetes screening points card (target: undiagnosed diabetes, HbA1c >= 6.5)",
+  "body_measure": "bmi",
+  "bands": {
+    "age": {
+      "edges": [
+        20,
+        35,
+        45,
+        55,
+        65,
+        200
+      ],
+      "labels": [
+        "20-34",
+        "35-44",
+        "45-54",
+        "55-64",
+        "65+"
+      ],
+      "points": [
+        0,
+        4,
+        4,
+        5,
+        5
+      ]
+    },
+    "bmi": {
+      "edges": [
+        0,
+        25,
+        30,
+        35,
+        40,
+        999
+      ],
+      "labels": [
+        "< 25",
+        "25-29.9",
+        "30-34.9",
+        "35-39.9",
+        "40+"
+      ],
+      "points": [
+        0,
+        1,
+        4,
+        4,
+        5
+      ]
+    }
+  },
+  "yes_no": {
+    "family_history_diabetes": {
+      "question": "Parent, brother or sister with diabetes",
+      "points": 1
+    },
+    "told_high_bp": {
+      "question": "Ever told by a doctor you have high blood pressure",
+      "points": 2
+    },
+    "inactive": {
+      "question": "No regular exercise AND no physically hard work",
+      "points": 1
+    }
+  },
+  "dropped_zero_point_items": [
+    "male"
+  ],
+  "cutoff": 7,
+  "max_score": 14,
+  "band_rates": {
+    "low": {
+      "undiagnosed_diabetes": 0.007417397167902899,
+      "hba1c_5_7_or_more": 0.19386378961564396,
+      "n": 2966
+    },
+    "high": {
+      "undiagnosed_diabetes": 0.05905875115349123,
+      "hba1c_5_7_or_more": 0.478929560135343,
+      "n": 3251
+    }
+  },
+  "auroc_out_of_fold": 0.741,
+  "sensitivity_at_cutoff": 0.897196261682243,
+  "share_tested_at_cutoff": 0.5229210230014476
+}
