@@ -79,9 +79,6 @@ Two points means roughly double the odds. The points come from a logistic model,
 | [`results/metrics.json`](results/metrics.json) | Every number in this README. |
 | `results/*.png` | Calibration and SHAP plots. |
 | [`docs/MODEL_CARD.md`](docs/MODEL_CARD.md) | Intended use, limits, subgroup performance. |
-| [`docs/ROADMAP.md`](docs/ROADMAP.md) | Next steps: validation on Indian data (NFHS-5), an Asian BMI version of the card, recalibration, a pilot. |
-| [`scripts/download_nhanes.py`](scripts/download_nhanes.py) | A standalone downloader that saves the raw NHANES files as both `.xpt` and `.csv`. Not needed for the notebook. |
-| [`LICENSE`](LICENSE) | MIT licence: free to reuse with attribution. |
 
 **Re-run the analysis:**
 
@@ -147,4 +144,4 @@ A single HbA1c test is a research label, not a diagnosis. The data is from the U
 Built with help from an AI coding assistant (Claude Code). Study design, decisions and checking of the results are my own. Data: CDC National Health and Nutrition Examination Survey (NHANES), public domain.
 
 ## Licence
-Code is released under the MIT licence (see `LICENSE`). This is a screening aid for research and education, not a medical device or a diagnosis.
+Code is released under the MIT licence. This is a screening aid for research and education, not a medical device or a diagnosis.
