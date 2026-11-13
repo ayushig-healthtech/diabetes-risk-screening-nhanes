@@ -1,0 +1,32 @@
+Model card: diabetes screening points card
+Intended use
+What it does: ranks adults (20+) by their chance of undiagnosed diabetes, so that the people most at risk are sent for an HbA1c blood test.
+Users: community health workers, pharmacies, workplace or camp screening, either on the printed card or with predict.py, which scores one person or a whole CSV.
+Not for: diagnosing diabetes, deciding treatment, people already diagnosed, pregnant women, or anyone under 20.
+Inputs
+Age, height and weight (as BMI), family history of diabetes (parent or sibling), ever told high blood pressure, and regular exercise or hard physical work. No lab values.
+
+Output
+An integer score from 0 to 14. A score of 7 or more means "get an HbA1c test".
+
+Training data
+NHANES 2017–March 2020: 6,217 non-pregnant US adults who said they had not been diagnosed with diabetes and had HbA1c, height, weight and waist measured. 227 of them had undiagnosed diabetes (HbA1c ≥ 6.5%).
+
+Performance (out-of-fold, 2017–2020)
+Metric	Value
+AUROC	0.741 (95% CI 0.709–0.771); ADA risk test 0.745 on the same people
+Sensitivity at score ≥ 7	89.7%
+Share of people sent for a test	52.3%
+Undiagnosed diabetes, score ≥ 7	5.9%
+Undiagnosed diabetes, score < 7	0.7%
+Subgroups (full ML model and ADA test; see notebook section 5c)
+Men: with a single threshold the full model catches 72% of cases in men, against 83% for the ADA test. A separate threshold per sex brings both sexes to 84% at no extra overall testing (notebook section 5c). The paper card has a single cut-off; a per-sex cut-off for the card is still to be tested.
+NH Asian adults (n = 776, 36 cases): the card's AUROC is 0.765. Asians develop diabetes at lower BMI (mean 28.8 vs 34.9 among cases), so BMI-based points may under-score South Asians. With so few cases, the estimate is uncertain.
+Performance by income band was similar (AUROC 0.73–0.77).
+Known limitations
+The label is a single HbA1c test, not a confirmed diagnosis. HbA1c can mislead in anaemia and haemoglobin variants, which are common in India.
+The card is built on US data and has not been validated in India. Cut-offs and risk rates must be re-checked on Indian data (for example NFHS-5) before any programme use.
+The risk percentages shown by predict.py are US sample rates. A model trained on 2017–20 over-predicted risk in 2021–23 (3.4% predicted vs 2.5% observed), so re-calibrate before using the card in a new population.
+The cut-off was chosen on the same data it is reported on, which makes the reported numbers slightly optimistic.
+Ethical considerations
+A "lower risk" result must not discourage anyone with symptoms from getting tested; predict.py tells anyone with symptoms to test, whatever the score. The tool should send people to an affordable HbA1c test. Without that next step, screening adds anxiety and no benefit.
